@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="MyCSS.css">
 </head>
 <body>
+
+<h1>Add new track</h1>
+
+<form action="/createNew" method="post">
+    <div id="createNewBox1">
+        <label>Enter name of TRACK:</label>
+        <input type="text" name="track" placeholder="Track">
+    </div>
+    <div id="createNewBox2">
+        <label>Enter name of ARTIST:</label>
+        <input type="text" name="artist_name" placeholder="Artist name">
+    </div>
+
+    <div id="createNewBox3">
+        <label>Enter name of ALBUM:</label>
+        <input type="text" name="album_title" placeholder="Album title">
+    </div>
+
+    <div id="createNewBox4">
+        <label>Enter year of release:</label>
+        <input type="text" name="year_of_release" placeholder="Year of release">
+    </div>
+
+    <div id="createNewBox5">
+        <label>Enter record company:</label>
+        <input type="text" name="record_comp" placeholder="Record company">
+    </div>
+
+    <input type="submit" value="Add track" id="btn-create" style="float:left; margin-right:10px;">
+
+</form>
+
+<form action="/">
+    <input type="submit" value="Cancel" id="btn-cancel" style="float:left;">
+</form>
 
 </body>
 </html>

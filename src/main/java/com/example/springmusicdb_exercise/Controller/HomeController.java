@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -20,5 +23,19 @@ public class HomeController {
         List<Track> trackList = trackService.fetchAll();
         model.addAttribute("tracks", trackList);
         return "home/index";
+    }
+    @GetMapping("/create")
+    public String create(){
+        return "home/create";
+    }
+    @PostMapping("/createNew")
+    public String createNew(@ModelAttribute Track track){
+        trackService.addTrack(track);
+        return "redirect:/";
+    }
+    @GetMapping("/viewOne/{track_id}")
+    public String viewOne(@PathVariable("track_id") int id, Model model){
+        model.addAttribute("track", trackService.findTrackByID(id));
+        return "home/viewOne";
     }
 }

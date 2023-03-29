@@ -19,9 +19,16 @@ public class TrackRepo {
         RowMapper<Track> rowMapper = new BeanPropertyRowMapper<>(Track.class);
         return template.query(sql, rowMapper);
     }
-
     public void addTrack(Track t){
-        String sql ="";
+        String sql ="INSERT INTO track (track_id, track, artist_name, album_title, year_of_release, record_comp) VALUES (?, ?, ?, ?, ?, ?)";
+        template.update(sql, t.getTrack_id(), t.getTrack(), t.getArtist_name(), t.getAlbum_title(), t.getYear_of_release(),
+                t.getRecord_comp());
+    }
+    public Track findTrackByID(int id){
+        String sql="SELECT * FROM track WHERE track_id = ?";
+        RowMapper<Track> rowMapper = new BeanPropertyRowMapper<>(Track.class);
+        Track t = template.queryForObject(sql, rowMapper, id);
+        return t;
     }
 }
 
