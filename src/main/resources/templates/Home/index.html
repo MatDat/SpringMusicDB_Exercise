@@ -12,28 +12,32 @@
     <button id="btn-create">Add track</button>
 </a>
 
+<a href="/viewOne">
+    <button id="btn-findTrack">Find track</button>
+</a>
+
 <table>
     <thead>
-        <tr>
-            <th>ID</th>
-            <th>Track</th>
-            <th>Artist name</th>
-            <th>Album title</th>
-            <th>Year of release</th>
-            <th>Record company</th>
-            <th>Actions</th>
-        </tr>
+    <tr>
+        <th>ID</th>
+        <th>Track</th>
+        <th>Artist name</th>
+        <th>Album title</th>
+        <th>Year of release</th>
+        <th>Record company</th>
+        <th style="background-color: azure; border: none;">Actions</th>
+    </tr>
     </thead>
 
     <tbody>
-        <tr th:each="track: ${tracks}" id="rowsBody">
-                <td th:text="${track.track_id}"id="centerCell"/>
-                <td th:text="${track.track}"/>
-                <td th:text="${track.artist_name}"/>
-                <td th:text="${track.album_title}"/>
-                <td th:text="${track.year_of_release}"/>
-                <td th:text="${track.record_comp}"/>
-        </tr>
+    <tr th:each="track: ${tracks}" id="rowsBody">
+        <td th:text="${track.track_id}" id="centerCell"/>
+        <td th:text="${track.track}"/>
+        <td th:text="${track.artist_name}"/>
+        <td th:text="${track.album_title}"/>
+        <td th:text="${track.year_of_release}"/>
+        <td th:text="${track.record_comp}"/>
+    </tr>
     </tbody>
 </table>
 

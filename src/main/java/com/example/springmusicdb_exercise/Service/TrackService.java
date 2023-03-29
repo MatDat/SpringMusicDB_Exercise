@@ -20,4 +20,8 @@ public class TrackService {
     public void addTrack(Track t){
         trackRepo.addTrack(t);
     }
+
+    public Track findTrackByID(int id){
+        return trackRepo.findTrackByID(id);
+    }
 }
