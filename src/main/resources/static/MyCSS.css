@@ -1,0 +1,47 @@
+*{
+    font-family: Arial;
+}
+body{
+    background-color: azure;
+}
+h1{
+    font-size: 48px;
+    text-transform: uppercase;
+}
+th{
+    background-color: lightblue;
+    margin: 0px 0px 0px 0px;
+}
+#rowsBody:hover{
+    background-color: lightsalmon;
+    animation: pulse 1s infinite;
+    transition: .2s;
+}
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 4px;
+}
+tr:nth-child(even){
+    background-color: azure;
+}
+tr:nth-child(odd){
+    background-color: white;
+}
+#btn-create{
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: lightgreen;
+    border: 1px solid black;
+    margin: 0 0 5px 0;
+    border-radius: 15px;
+    padding: 2px 15px 2px 15px;
+}
+#btn-create:hover{
+    background-color: lightsalmon;
+    animation: pulse 1s infinite;
+    transition: .3s;
+}
+#centerCell{
+    text-align: center;
+}

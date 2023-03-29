@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="MyCSS.css">
+</head>
+<body>
+<h1>Music list</h1>
+
+<a href="/create">
+    <button id="btn-create">Add track</button>
+</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Track</th>
+            <th>Artist name</th>
+            <th>Album title</th>
+            <th>Year of release</th>
+            <th>Record company</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr th:each="track: ${tracks}" id="rowsBody">
+                <td th:text="${track.track_id}"id="centerCell"/>
+                <td th:text="${track.track}"/>
+                <td th:text="${track.artist_name}"/>
+                <td th:text="${track.album_title}"/>
+                <td th:text="${track.year_of_release}"/>
+                <td th:text="${track.record_comp}"/>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
