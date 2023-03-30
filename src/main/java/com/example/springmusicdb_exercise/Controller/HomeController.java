@@ -33,8 +33,8 @@ public class HomeController {
         trackService.addTrack(track);
         return "redirect:/";
     }
-    @GetMapping("/viewOne/{track_id}")
-    public String viewOne(@PathVariable("track_id") int id, Model model){
+    @GetMapping("/viewOne/{id}")
+    public String viewOne(@PathVariable("id") int id, Model model){
         model.addAttribute("track", trackService.findTrackByID(id));
         return "home/viewOne";
     }

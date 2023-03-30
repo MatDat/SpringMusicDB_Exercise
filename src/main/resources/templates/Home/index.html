@@ -12,9 +12,11 @@
     <button id="btn-create">Add track</button>
 </a>
 
-<a href="/viewOne">
+<!--
+<a th:href="@{'/viewOne/'+${track.id}}">
     <button id="btn-findTrack">Find track</button>
 </a>
+-->
 
 <table>
     <thead>
@@ -37,6 +39,11 @@
         <td th:text="${track.album_title}"/>
         <td th:text="${track.year_of_release}"/>
         <td th:text="${track.record_comp}"/>
+        <td>
+            <a th:href="@{''+${track.id}}">
+                <button id="btn-findTrack">Find track</button>
+            </a>
+        </td>
     </tr>
     </tbody>
 </table>
